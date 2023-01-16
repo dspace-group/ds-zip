@@ -1,12 +1,15 @@
 /*
   zip.c - Zip 3
 
-  Copyright (c) 1990-2008 Info-ZIP.  All rights reserved.
+  Copyright 2023, dSPACE GmbH. All rights reserved
 
-  See the accompanying file LICENSE, version 2007-Mar-4 or later
-  (the contents of which are also included in zip.h) for terms of use.
-  If, for some reason, all these files are missing, the Info-ZIP license
-  also may be found at:  ftp://ftp.info-zip.org/pub/infozip/license.html
+  Based on info-zip (Copyright (c) 1990-2008 Info-ZIP) 
+
+  Mofifications:
+    - Removed option -T (test zip archive)
+    - Removed option -TT (provide command to use for -T)
+  This fixes the following vulnurability:
+    https://nvd.nist.gov/vuln/detail/CVE-2018-13410
 */
 /*
  *  zip.c by Mark Adler.
@@ -582,7 +585,7 @@ local void help()
 "  -c   add one-line comments        -z   add zipfile comment",
 "                                    -o   make zipfile as old as latest entry",
 "  -F   fix zipfile (-FF try harder) -D   do not add directory entries",
-"  -T   test zipfile integrity       -X   eXclude eXtra file attributes",
+"                                    -X   eXclude eXtra file attributes",
 #  if CRYPT
 "  -e   encrypt                      -n   don't compress these suffixes"
 #  else
@@ -626,7 +629,7 @@ local void help()
 #endif
 "  -F   fix zipfile (-FF try harder) -D   do not add directory entries",
 "  -A   adjust self-extracting exe   -J   junk zipfile prefix (unzipsfx)",
-"  -T   test zipfile integrity       -X   eXclude eXtra file attributes",
+"                                    -X   eXclude eXtra file attributes",
 #ifdef VMS
 "  -C   preserve case of file names  -C-  down-case all file names",
 "  -C2  preserve case of ODS2 names  -C2- down-case ODS2 file names* (*=default)",
@@ -920,12 +923,8 @@ local void help_extended()
 "  -li       include info messages (default just warnings and errors)",
 "",
 "Testing archives:",
-"  -T        test completed temp archive with unzip before updating archive",
-"  -TT cmd   use command cmd instead of 'unzip -tqq' to test archive",
-"             On Unix, to use unzip in current directory, could use:",
-"               zip archive file1 file2 -T -TT \"./unzip -tqq\"",
-"             In cmd, {} replaced by temp archive path, else temp appended.",
-"             The return code is checked for success (0 on Unix)",
+"  Options -T and -TT have been removed to avoid vulnerabilty:",
+"     https://nvd.nist.gov/vuln/detail/CVE-2018-13410",
 "",
 "Fixing archives:",
 "  -F        attempt to fix a mostly intact archive (try this first)",
@@ -953,7 +952,6 @@ local void help_extended()
 "  -AS       include only files with the DOS Archive bit set",
 "  -AC       after archive created, clear archive bit of included files",
 "      WARNING: Once the archive bits are cleared they are cleared",
-"               Use -T to test the archive before the bits are cleared",
 "               Can also use -sf to save file list before zipping files",
 "",
 "Show files:",
@@ -2072,8 +2070,6 @@ struct option_struct far options[] = {
 #endif /* MSDOS || OS2 || WIN32 || ATARI */
     {"t",  "from-date",   o_REQUIRED_VALUE, o_NOT_NEGATABLE, 't',  "exclude before date"},
     {"tt", "before-date", o_REQUIRED_VALUE, o_NOT_NEGATABLE, o_tt, "include before date"},
-    {"T",  "test",        o_NO_VALUE,       o_NOT_NEGATABLE, 'T',  "test updates before replacing archive"},
-    {"TT", "unzip-command", o_REQUIRED_VALUE,o_NOT_NEGATABLE,o_TT, "unzip command to use, name is added to end"},
     {"u",  "update",      o_NO_VALUE,       o_NOT_NEGATABLE, 'u',  "update existing entries and add new"},
     {"U",  "copy-entries", o_NO_VALUE,      o_NOT_NEGATABLE, 'U',  "select from archive instead of file system"},
 #ifdef UNICODE_SUPPORT
@@ -3073,13 +3069,6 @@ char **argv;            /* command line tokens */
             after = dostime(yyyy, mm, dd, 0, 0, 0);
           }
           free(value);
-          break;
-        case 'T':   /* test zip file */
-          test = 1; break;
-        case o_TT:  /* command path to use instead of 'unzip -t ' */
-          if (unzip_path)
-            free(unzip_path);
-          unzip_path = value;
           break;
         case 'U':   /* Select archive entries to keep or operate on */
           if (action != ADD) {

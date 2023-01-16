@@ -1,12 +1,9 @@
 /*
   revision.h - Zip 3
 
-  Copyright (c) 1990-2008 Info-ZIP.  All rights reserved.
+  Copyright 2023, dSPACE GmbH, All rights reserved.
 
-  See the accompanying file LICENSE, version 2007-Mar-4 or later
-  (the contents of which are also included in zip.h) for terms of use.
-  If, for some reason, all these files are missing, the Info-ZIP license
-  also may be found at:  ftp://ftp.info-zip.org/pub/infozip/license.html
+  See the accompanying file LICENSE.
 */
 /*
  *  revision.h by Mark Adler.
@@ -18,18 +15,18 @@
 /* For api version checking */
 #define Z_MAJORVER   3
 #define Z_MINORVER   0
-#define Z_PATCHLEVEL 0
+#define Z_PATCHLEVEL 1
 #define Z_BETALEVEL "i BETA"
 
-#define VERSION "3.0"
-#define REVDATE "July 5th 2008"
+#define VERSION "3.0.1"
+#define REVDATE "January 16th 2023"
 
 #define DW_MAJORVER    Z_MAJORVER
 #define DW_MINORVER    Z_MINORVER
 #define DW_PATCHLEVEL  Z_PATCHLEVEL
 
 #ifndef IZ_COMPANY_NAME               /* might be already defined... */
-#  define IZ_COMPANY_NAME "Info-ZIP"
+#  define IZ_COMPANY_NAME "DS-ZIP"
 #endif
 
 #if !defined(WINDLL) && !defined(IZ_VERSION_SYMBOLS_ONLY)
@@ -50,7 +47,7 @@ extern ZCONST char * far cryptnote[7];
 #else /* DEFCPYRT */
 
 ZCONST char *copyright[] = {
-"Copyright (c) 1990-2008 Info-ZIP - Type '%s \"-L\"' for software license."
+"Copyright 2023, dSPACE GmbH. - Type '%s \"-L\"' for software license."
 /* XXX still necessary ???? */
 #ifdef AZTEC_C
 ,        /* extremely lame compiler bug workaround */
@@ -58,12 +55,8 @@ ZCONST char *copyright[] = {
 };
 
 ZCONST char * far versinfolines[] = {
-"This is %s %s (%s), by Info-ZIP.",
-"Currently maintained by E. Gordon.  Please send bug reports to",
-"the authors using the web page at www.info-zip.org; see README for details.",
-"",
-"Latest sources and executables are at ftp://ftp.info-zip.org/pub/infozip,",
-"as of above date; see http://www.info-zip.org/ for other sites.",
+"This is %s %s (%s)",
+"Copyright 2023, dSPACE GmbH, All rights reserved.",
 ""
 };
 
@@ -79,60 +72,42 @@ ZCONST char * far cryptnote[] = {
 };
 
 ZCONST char * far swlicense[] = {
-"Copyright (c) 1990-2008 Info-ZIP.  All rights reserved.",
 "",
-"For the purposes of this copyright and license, \"Info-ZIP\" is defined as",
-"the following set of individuals:",
+"BSD 3-Clause License",
 "",
-"   Mark Adler, John Bush, Karl Davis, Harald Denker, Jean-Michel Dubois,",
-"   Jean-loup Gailly, Hunter Goatley, Ed Gordon, Ian Gorman, Chris Herborth,",
-"   Dirk Haase, Greg Hartwig, Robert Heath, Jonathan Hudson, Paul Kienitz,",
-"   David Kirschbaum, Johnny Lee, Onno van der Linden, Igor Mandrichenko,",
-"   Steve P. Miller, Sergio Monesi, Keith Owens, George Petrov, Greg Roelofs,",
-"   Kai Uwe Rommel, Steve Salisbury, Dave Smith, Steven M. Schweda,",
-"   Christian Spieler, Cosmin Truta, Antoine Verheijen, Paul von Behren,",
-"   Rich Wales, Mike White",
+"Copyright 2023, dSPACE GmbH, All rights reserved.",
 "",
-"This software is provided \"as is,\" without warranty of any kind, express",
-"or implied.  In no event shall Info-ZIP or its contributors be held liable",
-"for any direct, indirect, incidental, special or consequential damages",
-"arising out of the use of or inability to use this software.",
+"Redistribution and use in source and binary forms, with or without",
+"modification, are permitted provided that the following conditions are met:",
 "",
-"Permission is granted to anyone to use this software for any purpose,",
-"including commercial applications, and to alter it and redistribute it",
-"freely, subject to the above disclaimer and the following restrictions:",
+"1. Redistributions of source code must retain the above copyright notice, this",
+"   list of conditions and the following disclaimer.",
 "",
-"    1. Redistributions of source code (in whole or in part) must retain",
-"       the above copyright notice, definition, disclaimer, and this list",
-"       of conditions.",
+"2. Redistributions in binary form must reproduce the above copyright notice,",
+"   this list of conditions and the following disclaimer in the documentation",
+"   and/or other materials provided with the distribution.",
 "",
-"    2. Redistributions in binary form (compiled executables and libraries)",
-"       must reproduce the above copyright notice, definition, disclaimer,",
-"       and this list of conditions in documentation and/or other materials",
-"       provided with the distribution.  The sole exception to this condition",
-"       is redistribution of a standard UnZipSFX binary (including SFXWiz) as",
-"       part of a self-extracting archive; that is permitted without inclusion",
-"       of this license, as long as the normal SFX banner has not been removed",
-"       from the binary or disabled.",
+"3. Neither the name of the copyright holder nor the names of its",
+"   contributors may be used to endorse or promote products derived from",
+"   this software without specific prior written permission.",
 "",
-"    3. Altered versions--including, but not limited to, ports to new operating",
-"       systems, existing ports with new graphical interfaces, versions with",
-"       modified or added functionality, and dynamic, shared, or static library",
-"       versions not from Info-ZIP--must be plainly marked as such and must not",
-"       be misrepresented as being the original source or, if binaries,",
-"       compiled from the original source.  Such altered versions also must not",
-"       be misrepresented as being Info-ZIP releases--including, but not",
-"       limited to, labeling of the altered versions with the names \"Info-ZIP\"",
-"       (or any variation thereof, including, but not limited to, different",
-"       capitalizations), \"Pocket UnZip,\" \"WiZ\" or \"MacZip\" without the",
-"       explicit permission of Info-ZIP.  Such altered versions are further",
-"       prohibited from misrepresentative use of the Zip-Bugs or Info-ZIP",
-"       e-mail addresses or the Info-ZIP URL(s), such as to imply Info-ZIP",
-"       will provide support for the altered versions.",
+"THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"",
+"AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE",
+"IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE",
+"DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE",
+"FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL",
+"DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR",
+"SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER",
+"CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,",
+"OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE",
+"OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.",
 "",
-"    4. Info-ZIP retains the right to use the names \"Info-ZIP,\" \"Zip,\" \"UnZip,\"",
-"       \"UnZipSFX,\" \"WiZ,\" \"Pocket UnZip,\" \"Pocket Zip,\" and \"MacZip\" for its",
-"       own source and binary releases."
+"------------------------------------------------------------------------------",
+"ds-zip is based on Info-ZIP (http://www.info-zip.org). ",
+"Changes are made due to security issues:",
+"  - Removed options -T and -TT",
+"See https://nvd.nist.gov/vuln/detail/CVE-2018-13410 for details",
+"",
 };
 #endif /* DEFCPYRT */
 #endif /* !WINDLL && !IZ_VERSION_SYMBOLS_ONLY */

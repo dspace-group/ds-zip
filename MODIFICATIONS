@@ -1,0 +1,11 @@
+ds-zip version 3.0.1 based on Info-Zip 3.0
+
+Modifications:
+
+zip.c:
+- Removed command line option -T (test zip archive)
+- Removed command line option -TT (provide command for -T)
+
+This fixes:
+https://nvd.nist.gov/vuln/detail/CVE-2018-13410
+
