@@ -568,9 +568,9 @@ local void help()
   /* help array */
   static ZCONST char *text[] = {
 #ifdef VMS
-"Zip %s (%s). Usage: zip == \"$ disk:[dir]zip.exe\"",
+"ds-zip %s (%s). Usage: zip == \"$ disk:[dir]zip.exe\"",
 #else
-"Zip %s (%s). Usage:",
+"ds-zip %s (%s). Usage:",
 #endif
 #ifdef MACOS
 "zip [-options] [-b fm] [-t mmddyyyy] [-n suffixes] [zipfile list] [-xi list]",
