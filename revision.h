@@ -15,18 +15,18 @@
 /* For api version checking */
 #define Z_MAJORVER   3
 #define Z_MINORVER   0
-#define Z_PATCHLEVEL 1
+#define Z_PATCHLEVEL 2
 #define Z_BETALEVEL "i BETA"
 
-#define VERSION "3.0.1"
-#define REVDATE "January 16th 2023"
+#define VERSION "3.0.2"
+#define REVDATE "June 26th 2023"
 
 #define DW_MAJORVER    Z_MAJORVER
 #define DW_MINORVER    Z_MINORVER
 #define DW_PATCHLEVEL  Z_PATCHLEVEL
 
 #ifndef IZ_COMPANY_NAME               /* might be already defined... */
-#  define IZ_COMPANY_NAME "DS-ZIP"
+#  define IZ_COMPANY_NAME "dSPACE GmbH"
 #endif
 
 #if !defined(WINDLL) && !defined(IZ_VERSION_SYMBOLS_ONLY)

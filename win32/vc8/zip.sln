@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zip", "zip.vcproj", "{F3C5C45B-3ABC-4EFA-A5F0-2416CF6CF85C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zipcloak", "zipcloak.vcproj", "{19EC0A8C-6489-4696-8259-8E76BD5946FE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zipnote", "zipnote.vcproj", "{B3B35094-449C-4266-AF7D-1AE3A76B5653}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zipsplit", "zipsplit.vcproj", "{D247B2A5-1492-4947-A2BA-283A730589F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		ASM Debug|Win32 = ASM Debug|Win32
+		ASM Release|Win32 = ASM Release|Win32
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F3C5C45B-3ABC-4EFA-A5F0-2416CF6CF85C}.ASM Debug|Win32.ActiveCfg = ASM Debug|Win32
+		{F3C5C45B-3ABC-4EFA-A5F0-2416CF6CF85C}.ASM Debug|Win32.Build.0 = ASM Debug|Win32
+		{F3C5C45B-3ABC-4EFA-A5F0-2416CF6CF85C}.ASM Release|Win32.ActiveCfg = ASM Release|Win32
+		{F3C5C45B-3ABC-4EFA-A5F0-2416CF6CF85C}.ASM Release|Win32.Build.0 = ASM Release|Win32
+		{F3C5C45B-3ABC-4EFA-A5F0-2416CF6CF85C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F3C5C45B-3ABC-4EFA-A5F0-2416CF6CF85C}.Debug|Win32.Build.0 = Debug|Win32
+		{F3C5C45B-3ABC-4EFA-A5F0-2416CF6CF85C}.Release|Win32.ActiveCfg = Release|Win32
+		{F3C5C45B-3ABC-4EFA-A5F0-2416CF6CF85C}.Release|Win32.Build.0 = Release|Win32
+		{19EC0A8C-6489-4696-8259-8E76BD5946FE}.ASM Debug|Win32.ActiveCfg = ASM Debug|Win32
+		{19EC0A8C-6489-4696-8259-8E76BD5946FE}.ASM Debug|Win32.Build.0 = ASM Debug|Win32
+		{19EC0A8C-6489-4696-8259-8E76BD5946FE}.ASM Release|Win32.ActiveCfg = ASM Release|Win32
+		{19EC0A8C-6489-4696-8259-8E76BD5946FE}.ASM Release|Win32.Build.0 = ASM Release|Win32
+		{19EC0A8C-6489-4696-8259-8E76BD5946FE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{19EC0A8C-6489-4696-8259-8E76BD5946FE}.Debug|Win32.Build.0 = Debug|Win32
+		{19EC0A8C-6489-4696-8259-8E76BD5946FE}.Release|Win32.ActiveCfg = Release|Win32
+		{19EC0A8C-6489-4696-8259-8E76BD5946FE}.Release|Win32.Build.0 = Release|Win32
+		{B3B35094-449C-4266-AF7D-1AE3A76B5653}.ASM Debug|Win32.ActiveCfg = ASM Debug|Win32
+		{B3B35094-449C-4266-AF7D-1AE3A76B5653}.ASM Debug|Win32.Build.0 = ASM Debug|Win32
+		{B3B35094-449C-4266-AF7D-1AE3A76B5653}.ASM Release|Win32.ActiveCfg = ASM Release|Win32
+		{B3B35094-449C-4266-AF7D-1AE3A76B5653}.ASM Release|Win32.Build.0 = ASM Release|Win32
+		{B3B35094-449C-4266-AF7D-1AE3A76B5653}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B3B35094-449C-4266-AF7D-1AE3A76B5653}.Debug|Win32.Build.0 = Debug|Win32
+		{B3B35094-449C-4266-AF7D-1AE3A76B5653}.Release|Win32.ActiveCfg = Release|Win32
+		{B3B35094-449C-4266-AF7D-1AE3A76B5653}.Release|Win32.Build.0 = Release|Win32
+		{D247B2A5-1492-4947-A2BA-283A730589F0}.ASM Debug|Win32.ActiveCfg = ASM Debug|Win32
+		{D247B2A5-1492-4947-A2BA-283A730589F0}.ASM Debug|Win32.Build.0 = ASM Debug|Win32
+		{D247B2A5-1492-4947-A2BA-283A730589F0}.ASM Release|Win32.ActiveCfg = ASM Release|Win32
+		{D247B2A5-1492-4947-A2BA-283A730589F0}.ASM Release|Win32.Build.0 = ASM Release|Win32
+		{D247B2A5-1492-4947-A2BA-283A730589F0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D247B2A5-1492-4947-A2BA-283A730589F0}.Debug|Win32.Build.0 = Debug|Win32
+		{D247B2A5-1492-4947-A2BA-283A730589F0}.Release|Win32.ActiveCfg = Release|Win32
+		{D247B2A5-1492-4947-A2BA-283A730589F0}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
